@@ -2,8 +2,9 @@
 # -*- coding: utf-8 -*-
 import sys
 import os
-#from spellman import spellman_uX50P50
-from spellman_debug import spellman_uX50P50
+from spellman import spellman_uX50P50
+# for development purposes at home comment in the following line and uncomment the line before.
+#from spellman_debug import spellman_uX50P50
 from PyQt5.QtWidgets import QApplication, QWidget, QMainWindow, QPushButton, QInputDialog, QDialog, QTabWidget, QHBoxLayout, QGroupBox, QDoubleSpinBox, QLCDNumber, QLineEdit, QProgressBar, QLabel
 from PyQt5.QtCore import pyqtSlot, QTimer, Qt
 from PyQt5 import uic, QtGui
@@ -15,7 +16,7 @@ class Ui(QDialog):
         uic.loadUi('main.ui', self)
         
         #self.generator = spellman_MNX50P50('192.168.1.4', 50001)
-        self.generator = spellman_uX50P50('127.0.0.1', 50001)
+        self.generator = spellman_uX50P50('192.168.60.250', 50001)
         
         self.warning = QtGui.QPixmap(os.getcwd() + "/warning.png").scaled(100, 100, Qt.KeepAspectRatio)
         self.safe = QtGui.QPixmap(os.getcwd() + "/safe.png").scaled(100, 100, Qt.KeepAspectRatio)
